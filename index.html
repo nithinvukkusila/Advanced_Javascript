@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- <script src="/src/Foundation.js"></script>
+    <script src="/src/ExecitionContext.js"></script>
+    <script src="/src/Hoisting.js"></script> -->
+    <!-- <script src="/src/Functions.js"></script> -->
+    <!-- <script src="/src/Scope.js"></script> -->
+    <!-- <script src="src/IIFE.js"></script> -->
+    <!-- <script src="src/this.js"></script> -->
+    <!-- <script src="src/Currying.js"></script> -->
+    <!-- <script src="src/Types/Types.js"></script> -->
+    <script src="src/2Pillers/Closures.js"></script>
+  </head>
+  <body>
+    <h1 onclick="test(event)">
+      Javsacript Visit again
+      <p>this is r</p>
+    </h1>
+    <div class="parent" onclick="alert('gad')">
+        parent
+      <div onclick="alert('hey')">
+        child
+      </div>
+    </div>
+    <input id="search" />
+  </body>
+</html>
+
+<script>
+  function test(e) {
+    console.log(e.target.innerHTML);
+    console.log(" teting ");
+  }
+
+  let dtimer;
+  function debounceCount(e) {
+    clearTimeout(dtimer);
+    dtimer = setTimeout(function () {
+      console.log(e.target.value);
+    }, 500);
+  }
+
+  const input = document.getElementById("search");
+  input.addEventListener("click", debounce());
+
+  function trottle() {
+    let youCanCallNow = true;
+    return function () {
+      if (youCanCallNow) {
+        console.log("called");
+        youCanCallNow = false;
+        setTimeout(() => {
+          youCanCallNow = true;
+        }, 4000);
+      }
+    };
+  }
+
+  function debounce() {
+    let timerId;
+    return () => {
+      clearTimeout(timerId);
+      timerId = setTimeout(() => {
+        console.log("called after 500");
+      }, 500);
+    };
+  }
+</script>
