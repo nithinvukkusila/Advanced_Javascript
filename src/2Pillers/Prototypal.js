@@ -113,6 +113,9 @@ function someFuncion () {
     console.log(this.name, this.age)
 }
 
+// __proto__ points to prototype of an obj
+
+
 const some = somfunc.bind(obj)
 
 Function.prototype.bind = function (whoisCalling) {
