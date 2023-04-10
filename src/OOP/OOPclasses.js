@@ -100,3 +100,30 @@ const person4 = {
 person4.hi()
 
 
+// exercise 
+
+class Character2 {
+    constructor(name, weapon) {
+      this.name = name;
+      this.weapon = weapon;
+    }
+    attack() {
+      return 'atack with ' + this.weapon
+    }
+}
+
+class Queen extends Character2 {
+    constructor(name, weapon, other) {
+        super(name, weapon)
+        this.other = other
+    }
+    attack() {
+        return `I am the Victoria of ${this.other}, now bow down to me! `
+    }
+}
+
+const victoria = new Queen('Victoria', 'army', 'hearts');
+
+console.log(victoria.attack())
+
+//
